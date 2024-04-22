@@ -265,7 +265,7 @@ article .description {
   .Cart {
     width: 100%;
     padding: 15px;
-    position: static; 
+    position: static;
   }
 
   article {
@@ -353,4 +353,27 @@ article .description {
   .Cart--empty {
     font-size: 14px;
   }
+}
+
+/* Footer */
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: #ddd;
 }

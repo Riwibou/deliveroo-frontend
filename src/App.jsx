@@ -173,6 +173,13 @@ function App() {
           </section>
         </div>
       </main>
+      <footer>
+        <div class="footer">
+          <div class="link">
+            <p>This website was coded by <a href="https://github.com/Riwibou" target="_blank">Riwibou</a></p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
