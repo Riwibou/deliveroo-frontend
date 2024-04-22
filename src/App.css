@@ -1,3 +1,5 @@
+/* Styles pour les écrans de bureau */
+
 * {
   box-sizing: border-box;
 }
@@ -233,4 +235,122 @@ article .description {
   text-align: center;
   margin-top: 20px;
   color: #bababa;
+}
+
+/* Styles pour les tablettes */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .col-left,
+  .col-right {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .Cart {
+    width: 100%;
+    padding: 15px;
+    position: static; 
+  }
+
+  article {
+    width: 100%;
+  }
+}
+
+/* Styles pour les téléphones portables */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .hero-container p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .resto-descr {
+    font-size: 16px;
+  }
+
+  .sub-title {
+    font-size: 16px;
+  }
+
+  .col-right {
+    display: none;
+  }
+
+  .col-left {
+    width: 100%;
+  }
+
+  article {
+    width: 100%;
+    padding: 15px;
+  }
+
+  article img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .Cart {
+    width: 100%;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+  }
+
+  .Cart--validate {
+    margin: 10px auto;
+    padding: 0.8rem 1rem;
+  }
+
+  .Cart--total {
+    font-size: 1rem;
+  }
+
+  .Cart--result-name-tot,
+  .Cart--amount-tot {
+    font-size: 1rem;
+  }
+
+  .Cart--empty {
+    font-size: 14px;
+  }
 }
