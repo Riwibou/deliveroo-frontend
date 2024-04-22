@@ -14,7 +14,6 @@ function App() {
     const fetchData = async () => {
       const response = await axios.get(
         "https://site--deliveroo--gpvxp89pqghq.code.run/"
-        
       );
       console.log(response.data);
       setData(response.data);
@@ -59,11 +58,11 @@ function App() {
         if (cartItem.quantity === 1) {
           return null
         } else {
-        return { ...cartItem, quantity: cartItem.quantity - 1 };
+          return { ...cartItem, quantity: cartItem.quantity - 1 };
+        }
       }
-    }
       return cartItem;
-      }).filter(Boolean)
+    }).filter(Boolean);
     setCart(updatedCart);
   };
 
@@ -80,7 +79,7 @@ function App() {
         <div className="container hero-container">
           <div>
             <h1>{data.restaurant.name}</h1>
-            <p>{data.restaurant.description}</p>
+            <p className="resto-descr">{data.restaurant.description}</p>
           </div>
           <img src={data.restaurant.picture} alt="miam" />
         </div>
@@ -98,10 +97,14 @@ function App() {
                         return (
                           <article key={meal.id} onClick={() => addToCart(meal)}>
                             <div>
-                              <h3>{meal.title}</h3>
-                              <p className="description">{meal.description}</p>
-                              <span>{meal.price} €</span>
-                              {meal.popular && <span>Populaire</span>}
+                              <h3 className="sub-title">{meal.title}</h3>
+                              <p className="description resto-descr">{meal.description}</p>
+                              <span className="resto-descr">{meal.price} €</span>
+                              {meal.popular &&
+                                <span className="pop">
+                                  <img className="etoile" src="../public/etoile.png" alt="etoile" /> Populaire
+                                </span>
+                              }
                             </div>
                             {meal.picture && <img src={meal.picture} alt={meal.title} />}
                           </article>
@@ -116,19 +119,57 @@ function App() {
             })}
           </section>
           <section className="col-right">
-            <h2>Cart</h2>
-            <div>
+            <div className="Cart-div">
+              {/* Validate button */}
+              <button className={`Cart--validate ${cart.length === 0 ? 'disabled' : ''}`} disabled={cart.length === 0}>
+                Valider mon panier
+              </button>
+
+              {/* Map over cart items */}
               {cart.map((item, index) => (
-                <div key={index}>
-                  <p>{item.title}</p>
-                  <p>Quantity: {item.quantity}</p>
-                  <p>Price: {item.price} €</p>
-                  <p>Total: {(item.price * item.quantity).toFixed(2)} €</p>
-                  <button onClick={() => increaseQuantity(item)}>+</button>
-                  <button onClick={() => decreaseQuantity(item)}>-</button>
+                <div key={index} className="Cart--card">
+                  <div className="Cart--items">
+                    <div className="Cart--line">
+                      <div className="Cart--counter">
+                        {/* Plus button */}
+                        <span className="Cart--button" onClick={() => increaseQuantity(item)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                          </svg>
+                        </span>
+                        <span>{item.quantity}</span>
+                        {/* Minus button */}
+                        <span className="Cart--button" onClick={() => decreaseQuantity(item)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M19 13H5V11H19V13Z" />
+                          </svg>
+                        </span>
+                      </div>
+                      <span className="Cart--item-name">{item.title}</span>
+                      <span className="Cart--amount">{item.price} €</span>
+                    </div>
+                  </div>
+                  <div className="Cart--results">
+                    <div className="Cart--result-line">
+                      <span className="Cart--result-name">Sous-total</span>
+                      <span className="Cart--amount">
+                        {(item.price * item.quantity).toFixed(2)} €
+                      </span>
+                    </div>
+                  </div>
                 </div>
               ))}
-              <p>Total Price: {totalPrice()} €</p>
+              {/* If cart is empty, display this */}
+              {cart.length === 0 && (
+                <div className="Cart--empty">
+                  Votre panier est vide
+                </div>
+              )}
+              {/* Total price */}
+              <div className="Cart--total">
+                <span className="Cart--result-name-tot">Total</span>
+                <span className="Cart--amount-tot">{totalPrice()} €</span>
+              </div>
             </div>
           </section>
         </div>

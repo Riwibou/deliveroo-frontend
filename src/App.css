@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 h1 {
   font-size: 30px;
   font-weight: bold;
@@ -21,7 +25,7 @@ h3 {
 }
 
 header {
-  border-bottom: solid grey 1px;
+  border-bottom: solid rgb(226, 226, 226) 1px;
 }
 
 header img {
@@ -50,6 +54,14 @@ header img {
   line-height: 30px;
 }
 
+.resto-descr {
+  color: rgb(164, 164, 164)
+}
+
+.sub-title {
+  font-size: large;
+  font-weight: 400;
+}
 main {
   background-color: #f3f5f5;
   padding-top: 20px;
@@ -66,6 +78,7 @@ main {
 .col-right {
   height: 200px;
   width: 32%;
+  margin-left: 35px;
 }
 
 article {
@@ -75,7 +88,8 @@ article {
   border-radius: 5px;
   padding: 20px;
   display: flex;
-  height: 170px;
+  align-items: center;
+  min-height: 170px;
 }
 
 .articles-container {
@@ -85,14 +99,127 @@ article {
 }
 
 article img {
+  justify-content: space-between;
   height: 130px;
   width: 130px;
   object-fit: cover;
   border-radius: 5px;
+  margin-left: auto;
 }
 
 article .description {
-  height: 34px;
+  max-height: 30px;
   overflow: hidden;
   margin-bottom: 10px;
+  text-overflow: ellipsis;
+}
+
+.pop {
+  color: #FF8000;
+}
+
+.pop .etoile {
+  width: 15px;
+  height: 15px;
+  margin-left: 14px;
+  margin-right: 3px;
+}
+
+.Cart-div {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2%;
+  padding: 10px;
+}
+
+.Cart {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Cart--validate {
+  background: #00cdbd;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 20px auto;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 96%;
+}
+
+.Cart--validate:hover {
+  background-color: #00b3a3;
+}
+
+.Cart--validate.disabled {
+  background-color: #ccc;
+  pointer-events: none;
+}
+
+
+.Cart--card {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #bababa;
+  padding-bottom: 20px;
+}
+
+.Cart--line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Cart--counter {
+  display: flex;
+  align-items: center;
+}
+
+.Cart--button {
+  width: 30px;
+  height: 30px;
+  color: rgb(0, 206, 189);
+  cursor: pointer;
+  margin: 0 10px;
+  align-items: center;
+}
+
+.Cart--item-name {
+  flex: 1;
+  font-weight: 400;
+}
+
+.Cart--amount {
+  text-align: right;
+  width: 85px;
+}
+
+.Cart--total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.Cart--result-name {
+  margin-right: 38px;
+}
+
+
+.Cart--result-name-tot {
+  font-weight: 600;
+}
+
+.Cart--amount-tot {
+  font-weight: 600;
 }
