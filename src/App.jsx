@@ -164,7 +164,7 @@ function App() {
 
               {cart.length === 0 && (
                 <div className="Cart--empty">
-                  Remplissez-votre panier 
+                  Remplissez-votre panier
                 </div>
               )}
             </div>

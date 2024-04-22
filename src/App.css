@@ -214,6 +214,7 @@ article .description {
   font-weight: 600;
   margin-top: 20px;
   width: 100%;
+  padding: 10px;
 }
 
 .Cart--result-name {
