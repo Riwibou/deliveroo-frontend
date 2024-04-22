@@ -226,3 +226,8 @@ article .description {
 .Cart--amount-tot {
   font-weight: 600;
 }
+
+.Cart--empty {
+  text-align: center;
+  margin-top: 20px; 
+}

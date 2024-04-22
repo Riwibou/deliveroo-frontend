@@ -155,15 +155,15 @@ function App() {
                   </div>
                 </div>
               ))}
+              <div className="Cart--total">
+                <span className="Cart--result-name-tot">Total</span>
+                <span className="Cart--amount-tot">{totalPrice()} €</span>
+              </div>
               {cart.length === 0 && (
                 <div className="Cart--empty">
                   Votre panier est vide
                 </div>
               )}
-              <div className="Cart--total">
-                <span className="Cart--result-name-tot">Total</span>
-                <span className="Cart--amount-tot">{totalPrice()} €</span>
-              </div>
             </div>
           </section>
         </div>
