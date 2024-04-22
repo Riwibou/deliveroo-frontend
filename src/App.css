@@ -62,6 +62,7 @@ header img {
   font-size: large;
   font-weight: 400;
 }
+
 main {
   background-color: #f3f5f5;
   padding-top: 20px;
@@ -129,6 +130,8 @@ article .description {
   background-color: rgb(255, 255, 255);
   border-radius: 2%;
   padding: 10px;
+  overflow-y: auto;
+  max-height: 650px;
 }
 
 .Cart {
@@ -166,7 +169,6 @@ article .description {
   background-color: #ccc;
   pointer-events: none;
 }
-
 
 .Cart--card {
   margin-bottom: 20px;
@@ -210,14 +212,12 @@ article .description {
   font-size: 1.2rem;
   font-weight: 600;
   margin-top: 20px;
-  width: calc(100% - 40px);
-  padding: 0 20px;
+  width: 100%;
 }
 
 .Cart--result-name {
   margin-right: 38px;
 }
-
 
 .Cart--result-name-tot {
   font-weight: 600;
@@ -229,5 +229,5 @@ article .description {
 
 .Cart--empty {
   text-align: center;
-  margin-top: 20px; 
+  margin-top: 20px;
 }

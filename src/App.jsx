@@ -33,12 +33,13 @@ function App() {
 
   const addToCart = (item) => {
     const existingItemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
+    let shortTitle = item.title.split(' ').slice(0, 3).join(' '); // Raccourcir le titre à trois mots maximum
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
     } else {
-      setCart([...cart, { ...item, quantity: 1 }]);
+      setCart([...cart, { ...item, quantity: 1, title: shortTitle }]);
     }
   };
 
@@ -155,10 +156,12 @@ function App() {
                   </div>
                 </div>
               ))}
+
               <div className="Cart--total">
                 <span className="Cart--result-name-tot">Total</span>
                 <span className="Cart--amount-tot">{totalPrice()} €</span>
               </div>
+
               {cart.length === 0 && (
                 <div className="Cart--empty">
                   Votre panier est vide
