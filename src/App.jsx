@@ -157,7 +157,7 @@ function App() {
                 </div>
               ))}
 
-              <div className="Cart--total">
+              <div className="Cart--total ">
                 <span className="Cart--result-name-tot">Total</span>
                 <span className="Cart--amount-tot">{totalPrice()} €</span>
               </div>

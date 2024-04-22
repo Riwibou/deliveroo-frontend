@@ -76,12 +76,6 @@ main {
   width: 68%;
 }
 
-.col-right {
-  height: 200px;
-  width: 32%;
-  margin-left: 35px;
-}
-
 article {
   background-color: white;
   width: 48%;
@@ -126,12 +120,18 @@ article .description {
   margin-right: 3px;
 }
 
+.col-right {
+  height: 200px;
+  margin-left: 35px;
+}
+
 .Cart-div {
   background-color: rgb(255, 255, 255);
-  border-radius: 2%;
-  padding: 10px;
   overflow-y: auto;
   max-height: 650px;
+  margin: -20px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .Cart {
