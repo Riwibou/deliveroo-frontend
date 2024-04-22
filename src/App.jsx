@@ -118,27 +118,23 @@ function App() {
               }
             })}
           </section>
-          <section className="col-right">
+          <section className="col-right Cart">
             <div className="Cart-div">
-              {/* Validate button */}
               <button className={`Cart--validate ${cart.length === 0 ? 'disabled' : ''}`} disabled={cart.length === 0}>
                 Valider mon panier
               </button>
 
-              {/* Map over cart items */}
               {cart.map((item, index) => (
                 <div key={index} className="Cart--card">
                   <div className="Cart--items">
                     <div className="Cart--line">
                       <div className="Cart--counter">
-                        {/* Plus button */}
                         <span className="Cart--button" onClick={() => increaseQuantity(item)}>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                             <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
                           </svg>
                         </span>
                         <span>{item.quantity}</span>
-                        {/* Minus button */}
                         <span className="Cart--button" onClick={() => decreaseQuantity(item)}>
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                             <path d="M19 13H5V11H19V13Z" />
@@ -159,13 +155,11 @@ function App() {
                   </div>
                 </div>
               ))}
-              {/* If cart is empty, display this */}
               {cart.length === 0 && (
                 <div className="Cart--empty">
                   Votre panier est vide
                 </div>
               )}
-              {/* Total price */}
               <div className="Cart--total">
                 <span className="Cart--result-name-tot">Total</span>
                 <span className="Cart--amount-tot">{totalPrice()} €</span>
